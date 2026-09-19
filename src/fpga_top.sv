@@ -50,7 +50,7 @@ module fpga_top #(
     .ready_clr(ready_clr),
     .rx(uart_rx),
     .ready(ready),
-    .led_out(led),            // will mirror internal rx data
+    .led_out(rx_byte),        // internal rx data; latched below
     .display_out()            // unused at top; we drive display via controller below
   );
 
@@ -60,7 +60,7 @@ module fpga_top #(
     if (!rstn) begin
       latched_rx_byte <= 8'h00;
     end else if (ready) begin
-      latched_rx_byte <= led; // uart maps internal rx data to led_out
+      latched_rx_byte <= rx_byte; // uart maps internal rx data to led_out
     end
   end
 

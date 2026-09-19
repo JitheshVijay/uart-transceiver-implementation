@@ -17,8 +17,7 @@ module tb_transmitter;
     
     // Instantiate DUT
     transmitter #(
-        .CLK_FREQ(CLK_FREQ),
-        .BAUD_RATE(BAUD_RATE)
+        .CLOCKS_PER_PULSE(BIT_PERIOD)
     ) dut (
         .clk(clk),
         .rstn(rstn),

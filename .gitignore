@@ -1,0 +1,7 @@
+# Icarus Verilog / simulation artifacts
+*.vcd
+*.fst
+*.out
+*.vvp
+a.out
+sim_build/
